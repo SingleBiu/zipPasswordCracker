@@ -2,8 +2,8 @@
 Author: SingleBiu
 Date: 2024-10-27 16:24:42
 LastEditors: SingleBiu
-LastEditTime: 2024-10-27 16:42:36
-Description: file content
+LastEditTime: 2024-11-12 07:46:10
+Description: A zip password cracker.
 '''
 # import unrar
 import concurrent.futures as cf
@@ -41,6 +41,7 @@ class CompressionCrack(object):
             zip_file.pwd = pwd.encode()
             zip_file.extractall()
             print(f'破解已完成: {runtime} 压缩密码: {pwd}')
+            #压缩包密码保存到res.txt文件中
             with open('res.txt', 'w') as f:
                 f.write(pwd)
             os._exit(0)
